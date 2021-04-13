@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Commands package="guidPartialDiffPackage">
+    <Menus>
+      <Menu guid="guidPartialDiffPackageCmdSet" id="SubMenu" priority="0x1000" type="Menu">
+        <Parent guid="guidPartialDiffPackageCmdSet" id="TopMenuGroup"/>
+        <Strings>
+          <ButtonText>Partial Diff</ButtonText>
+        </Strings>
+      </Menu>
+    </Menus>
+    <Groups>
+      <Group guid="guidPartialDiffPackageCmdSet" id="TopMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN"/>
+      </Group>
+      <Group guid="guidPartialDiffPackageCmdSet" id="SubMenuGroup" priority="0x0600">
+        <Parent guid="guidPartialDiffPackageCmdSet" id="SubMenu"/>
+      </Group>
+    </Groups>
+    <Buttons>
+      <Button guid="guidPartialDiffPackageCmdSet" id="SelectCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidPartialDiffPackageCmdSet" id="SubMenuGroup" />
+        <Strings>
+          <ButtonText>选择文字进行比较</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPartialDiffPackageCmdSet" id="DiffCommandId" priority="0x0102" type="Button">
+        <Parent guid="guidPartialDiffPackageCmdSet" id="SubMenuGroup" />
+        <Strings>
+          <ButtonText>将选择的内容与之前选择的文本进行比较</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidPartialDiffPackageCmdSet" id="DiffWithClipboardCommandId" priority="0x0104" type="Button">
+        <Parent guid="guidPartialDiffPackageCmdSet" id="SubMenuGroup" />
+        <Strings>
+          <ButtonText>将选择与剪贴板内容进行比较</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+  <Symbols>
+    <GuidSymbol name="guidPartialDiffPackage" value="{22cfa07d-1409-4244-b5b2-c6f293e77c00}" />
+    <GuidSymbol name="guidPartialDiffPackageCmdSet" value="{d7a71c37-983c-4101-ac9f-a8274401c8b7}">
+      <IDSymbol name="TopMenuGroup" value="0x1020" />
+      <IDSymbol name="SubMenuGroup" value="0x1120" />
+      <IDSymbol name="SubMenu" value="0x1130" />
+      <IDSymbol name="SelectCommandId" value="0x0100" />
+      <IDSymbol name="DiffCommandId" value="0x0102" />
+      <IDSymbol name="DiffWithClipboardCommandId" value="0x0104" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
